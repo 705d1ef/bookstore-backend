@@ -1,0 +1,11 @@
+flake8==6.0.0
+flake8-bugbear==23.5.9
+flake8-builtins==2.1.0
+flake8-commas==2.1.0
+flake8-import-order==0.18.2
+flake8-isort==6.0.0
+flake8-print==5.0.0
+flake8-variables-names==0.0.5
+
+django-debug-toolbar==4.1.0
+django-debug-toolbar-force==0.2
