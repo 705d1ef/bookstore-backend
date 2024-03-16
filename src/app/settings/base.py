@@ -118,19 +118,28 @@ USE_TZ = True
 
 STATIC_URL = "/assets/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "assets",]
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
-
-#STATIC_URL = '/static/'
-#STATIC_ROOT = BASE_DIR / 'staticfiles'
-#STATICFILES_DIRS = [BASE_DIR / 'static',]
-#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_DIRS = [
+    BASE_DIR / "assets",
+]
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATICFILES_DIRS = [BASE_DIR / 'static',]
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 # REST_FRAMEWORK = {
 #    "DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",),
 #    "DEFAULT_PARSER_CLASSES": ("rest_framework.parsers.JSONParser",),
 # }
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
