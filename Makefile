@@ -36,7 +36,9 @@ li:
 	cd src && ./manage.py runserver --settings=app.settings.development
 
 t:
-	-cd src/products/tests/api && pytest -s test_api.py
+	-cd src/products/tests && pytest -s serializers/test_book_serializer.py::test_serializer_data_is_ok
 
 static:
 	-cd src && ./manage.py collectstatic --settings=app.settings.development
+
+
