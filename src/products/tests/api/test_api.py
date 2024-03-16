@@ -39,7 +39,7 @@ def test_get(client, books_fixture, url_books_list_fixture, django_user_model):
 
     assert response.status_code == 200
     assert response.data == data
-    assert data[0]["rating"] == "5.00"
+    assert data[0]["rating"] == 5.00
     assert data[0]["likes_count"] == 1
 
 

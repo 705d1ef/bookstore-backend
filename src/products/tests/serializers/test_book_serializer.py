@@ -1,8 +1,8 @@
 import pytest
 from django.contrib.auth.models import User
 from django.db.models import Case, Count, When
-
-
+from collections import OrderedDict
+from decimal import Decimal
 from products.models import Book, UserBookRelation
 from products.api.serializers import BooksSerializer
 
@@ -41,34 +41,54 @@ def test_serializer_data_is_ok():
     )
 
     data = BooksSerializer(books, many=True).data
-
+    
     expected_data = [
-        {
-            "id": 21,
-            "title": "Test book 1",
-            "price": "25.00",
-            "author": "Author 1",
-            "likes_count": 3,
-            "rating": "4.67",
-            "customers": [
-                {"first_name": "Keith", "last_name": "Howard"},
-                {"first_name": "Trevor", "last_name": "Scott"},
-                {"first_name": "Elizabeth", "last_name": "Rampling"},
-            ],
-        },
-        {
-            "id": 22,
-            "title": "Test book 2",
-            "price": "55.00",
-            "author": "Author 2",
-            "likes_count": 2,
-            "rating": "3.50",
-            "customers": [
-                {"first_name": "Keith", "last_name": "Howard"},
-                {"first_name": "Trevor", "last_name": "Scott"},
-                {"first_name": "Elizabeth", "last_name": "Rampling"},
-            ],
-        },
+        OrderedDict(
+            [
+                ("id", 21),
+                ("title", "Test book 1"),
+                ("cover", None),
+                ("author", "Author 1"),
+                ("likes_count", 3),
+                ("price", Decimal("25.00")),
+                ("rating", Decimal("4.67")),
+                (
+                    "customers",
+                    [
+                        OrderedDict([("first_name", "Keith"), ("last_name", "Howard")]),
+                        OrderedDict([("first_name", "Trevor"), ("last_name", "Scott")]),
+                        OrderedDict(
+                            [("first_name", "Elizabeth"), ("last_name", "Rampling")]
+                        ),
+                    ],
+                ),
+                ("description", ""),
+                ("number_of_pages", ""),
+            ]
+        ),
+        OrderedDict(
+            [
+                ("id", 22),
+                ("title", "Test book 2"),
+                ("cover", None),
+                ("author", "Author 2"),
+                ("likes_count", 2),
+                ("price", Decimal("55.00")),
+                ("rating", Decimal("2.33")),
+                (
+                    "customers",
+                    [
+                        OrderedDict([("first_name", "Keith"), ("last_name", "Howard")]),
+                        OrderedDict([("first_name", "Trevor"), ("last_name", "Scott")]),
+                        OrderedDict(
+                            [("first_name", "Elizabeth"), ("last_name", "Rampling")]
+                        ),
+                    ],
+                ),
+                ("description", ""),
+                ("number_of_pages", ""),
+            ]
+        ),
     ]
 
     assert data == expected_data
