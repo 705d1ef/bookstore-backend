@@ -7,11 +7,14 @@ class Book(models.Model):
     title = models.CharField(max_length=255, verbose_name="Title")
     author = models.CharField(max_length=255, verbose_name="Author")
     cover = models.ImageField(
-        verbose_name="Cover", blank=True, help_text="The image of book", upload_to="assets/products"
+        verbose_name="Cover",
+        blank=True,
+        help_text="The image of book",
+        upload_to="assets/products",
     )
     description = models.TextField(verbose_name="Description", blank=True)
     dimensions = models.CharField(max_length=255, verbose_name="Dimensions", blank=True)
-    quantity = models.PositiveSmallIntegerField(verbose_name="In stock")
+    quantity = models.PositiveSmallIntegerField(verbose_name="In stock", null=True)
     genre = models.CharField(max_length=255, verbose_name="Genre", blank=True)
     number_of_pages = models.CharField(verbose_name="Number of pages", blank=True)
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name="Price")
@@ -44,7 +47,9 @@ class UserBookRelation(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     like = models.BooleanField(default=False, blank=True)
     add_to_list = models.BooleanField(verbose_name="Add to List", default=False)
-    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, null=True, default=False, blank=True)
+    rate = models.PositiveSmallIntegerField(
+        choices=RATE_CHOICES, null=True, default=False, blank=True
+    )
 
     def __str__(self) -> str:
         return (
@@ -60,4 +65,3 @@ class UserBookRelation(models.Model):
             from products.services import set_rating
 
             set_rating(self.book)
-
