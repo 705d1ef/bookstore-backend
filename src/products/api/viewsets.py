@@ -29,7 +29,7 @@ class UserBookRelationView(UpdateModelMixin, GenericViewSet):
     serializer_class = UserBookRelationSerializer
     lookup_field = "book"
 
-    def get_object(self):
+    def get_object(self):  # type: ignore
         """
         Custom method to get or create relation between user and book
         """
