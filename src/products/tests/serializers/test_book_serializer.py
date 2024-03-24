@@ -41,7 +41,7 @@ def test_serializer_data_is_ok():
     )
 
     data = BooksSerializer(books, many=True).data
-    
+
     expected_data = [
         OrderedDict(
             [
