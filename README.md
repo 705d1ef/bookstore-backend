@@ -4,7 +4,7 @@ Django-based project. Frontend is built on React.js and can be found in the sepa
 
 ## Configuration
 
-Configuration is stored in ```src/core/.env```, for examples see ```src/app/.sample.env```
+Configuration is stored in ```src/.env```, for examples see ```src/.sample.env```
 
 ## Installing on a local machine
 
@@ -50,31 +50,24 @@ make lint
 make test
 ```
 
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
 
 ## Backend Code requirements
 
-Obey django's style guide.
+• Obey [django's style guide](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/).
 
-Configure your IDE to use flake8 for checking your python code. 
+• Configure your IDE to use flake8 for checking your python code. 
 
-For running flake8 manualy, do cd src && flake8
+• For running flake8 manualy, do cd src && flake8
 
-Prefer English over your native language in comments and commit messages.
+• Prefer English over your native language in comments and commit messages.
 
+## Code organisation
+
+• KISS and DRY.
+
+• Obey [django best practices](https://django-best-practices.readthedocs.io/en/latest/index.html).
+
+• Use PEP-484 [type hints](https://peps.python.org/pep-0484/) when possible.
 
 
 
