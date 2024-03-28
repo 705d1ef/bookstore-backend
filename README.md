@@ -7,7 +7,7 @@ Django-based project. Frontend is built on React.js and can be found in the sepa
 
 ## Configuration
 
-Configuration is stored in ```src/.env```, for examples see ```src/.sample.env```
+Configuration is stored in ```src/.env```, for example see ```src/.sample.env```
 
 ## Installing on a local machine
 
