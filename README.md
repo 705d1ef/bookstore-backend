@@ -77,9 +77,3 @@ make test
 ![Screenshot (120)](https://github.com/705d1ef/bookstore-backend/assets/92192816/2cb12fd3-926d-42d4-889c-c9c69f66d8c5)
 
 ![Screenshot (121)](https://github.com/705d1ef/bookstore-backend/assets/92192816/88bc9275-4af1-4fc0-bdba-c2e6ceaa33b0)
-
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
