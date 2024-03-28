@@ -2,6 +2,9 @@
 
 Django-based project. Frontend is built on React.js and can be found in the separate repo.
 
+![Screenshot (119)](https://github.com/705d1ef/bookstore-backend/assets/92192816/10984d21-c161-449e-8958-e5ca1bbfc5cd)
+
+
 ## Configuration
 
 Configuration is stored in ```src/.env```, for examples see ```src/.sample.env```
@@ -68,6 +71,12 @@ make test
 • Obey [django best practices](https://django-best-practices.readthedocs.io/en/latest/index.html).
 
 • Use PEP-484 [type hints](https://peps.python.org/pep-0484/) when possible.
+
+## Screenshots
+
+![Screenshot (120)](https://github.com/705d1ef/bookstore-backend/assets/92192816/2cb12fd3-926d-42d4-889c-c9c69f66d8c5)
+
+![Screenshot (121)](https://github.com/705d1ef/bookstore-backend/assets/92192816/88bc9275-4af1-4fc0-bdba-c2e6ceaa33b0)
 
 
 
