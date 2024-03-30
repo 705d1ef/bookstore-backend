@@ -1,3 +1,5 @@
+from typing import Any
+
 from django.db.models import Case, Count, When
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -29,7 +31,7 @@ class UserBookRelationView(UpdateModelMixin, GenericViewSet):
     serializer_class = UserBookRelationSerializer
     lookup_field = "book"
 
-    def get_object(self):  # type: ignore
+    def get_object(self) -> Any:
         """
         Custom method to get or create relation between user and book
         """
