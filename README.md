@@ -1,6 +1,6 @@
 # Backend for Bookstore app
 
-Django-based project. Frontend is built on React.js and can be found in the separate repo.
+Django-based project. Frontend is built on React.js and can be found in the separate [repo](https://github.com/705d1ef/bookstore-frontend).
 
 ![Screenshot (119)](https://github.com/705d1ef/bookstore-backend/assets/92192816/10984d21-c161-449e-8958-e5ca1bbfc5cd)
 
